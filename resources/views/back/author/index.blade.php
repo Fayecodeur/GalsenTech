@@ -35,8 +35,9 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($authors as $author)
                             <tr>
-                                <td>AUT-001</td>
+                                <td>Auteur {{$author->id}}</td>
                                 <td>
                                     <h2 class="table-avatar">
                                         <a
@@ -44,14 +45,14 @@
                                             class="avatar avatar-sm mr-2"
                                         ><img
                                                 class="avatar-img rounded-circle"
-                                                src="assets/img/profiles/avatar-03.jpg"
+                                                src="{{asset('back_auth/assets/profile/'.$author->image)}}"
                                                 alt="User Image"
                                             /></a>
-                                        <a href="profile.html">David Alvarez </a>
+                                        <a href="profile.html">{{$author->name}}</a>
                                     </h2>
                                 </td>
 
-                                <td>email@gmail.com</td>
+                                <td>{{$author->email}}</td>
 
                                 <td class="text-right">
                                     <div class="dropdown dropdown-action">
@@ -79,6 +80,7 @@
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
