@@ -24,7 +24,7 @@
                 <div class="card-body booking_card">
                     <div class="table-responsive">
                         <table
-                            class="datatable table table-stripped table table-hover table-center mb-0"
+                            class="datatable table table-stripped table-hover table-center mb-0"
                         >
                             <thead>
                             <tr>
@@ -64,17 +64,20 @@
                                         ><i class="fas fa-ellipsis-v ellipse_color"></i
                                             ></a>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="edit-staff.html"
+                                            <a class="dropdown-item" href="{{route('author.edit', $author)}}"
                                             ><i class="fas fa-pencil-alt m-r-5"></i>
                                                 Modifier</a
                                             >
                                             <a
                                                 class="dropdown-item"
                                                 href="#"
-                                                data-toggle="modal"
-                                                data-target="#delete_asset"
-                                            ><i class="fas fa-trash-alt m-r-5"></i>
-                                                Supprimer</a
+                                            >
+                                                <form method="POST" action="{{route('author.destroy', $author)}}">
+                                                    @csrf
+                                                    @method("DELETE")
+                                                    <button type="submit"> <i class="fas fa-trash-alt m-r-5 text-danger"></i>Supprimer</button>
+                                                </form>
+                                            </a
                                             >
                                         </div>
                                     </div>
