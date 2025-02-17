@@ -10,7 +10,7 @@
                 <a
                     href="{{route('social.create')}}"
                     class="btn btn-primary float-right veiwbutton"
-                >Ajouter un reseaul sociale</a
+                >Ajouter un reseau social</a
                 >
             </div>
         </div>
@@ -34,17 +34,19 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($socials as $social)
                             <tr>
-                                <td>LIEN-0001</td>
-                                <td><i class="fab fa-facebook-f"></i></td>
-                                <td>Facebook</td>
-                                <td><a href="">https://www.facebook.com</a></td>
+                                <td>LIEN-{{$social->id}}</td>
+                                <td><i class="{{$social->icon}}"></i></td>
+                                <td>{{$social->name}}</td>
+                                <td><a href="">{{$social->link}}</a></td>
                                 <td class="text-right">
                                     <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
                                         <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-categorie.html"><i class="fas fa-pencil-alt m-r-5"></i> Modifier</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Supprimer</a> </div>
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
