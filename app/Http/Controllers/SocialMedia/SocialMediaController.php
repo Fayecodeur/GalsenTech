@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\SocialMedia;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\SocialMedia\StoreSocialMediaRequest;
 use App\Http\Requests\SocialMedia\UpdateSocialMediaRequest;
 use App\Models\SocialMedia;
@@ -13,7 +14,7 @@ class SocialMediaController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.social_media.index');
     }
 
     /**
