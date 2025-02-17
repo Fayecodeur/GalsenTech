@@ -14,7 +14,7 @@ class SocialMediaController extends Controller
      */
     public function index()
     {
-        return view('back.social_media.index');
+        return view('back.social_media.index',['socials'=>SocialMedia::all()]);
     }
 
     /**
@@ -22,7 +22,7 @@ class SocialMediaController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.social_media.create');
     }
 
     /**
@@ -30,7 +30,9 @@ class SocialMediaController extends Controller
      */
     public function store(StoreSocialMediaRequest $request)
     {
-        //
+        $request->validated();
+        SocialMedia::create($request->all());
+        return redirect()->route('social.index')->with('success', "Réseau ajouté avec succés");
     }
 
     /**
