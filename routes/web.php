@@ -3,6 +3,7 @@
 use App\Http\Controllers\Article\ArticleController;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SocialMedia\SocialMediaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,5 +40,8 @@ Route::resource('/article', ArticleController::class);
 
 //Partie author
 Route::resource('/author', UserController::class);
+
+//Partie reseaux seciaux
+Route::resource('/social', SocialMediaController::class);
 
 require __DIR__ . '/auth.php';
