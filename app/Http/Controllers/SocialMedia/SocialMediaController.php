@@ -38,7 +38,7 @@ class SocialMediaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SocialMedia $socialMedia)
+    public function show(SocialMedia $social)
     {
         //
     }
@@ -46,17 +46,19 @@ class SocialMediaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SocialMedia $socialMedia)
+    public function edit(SocialMedia $social)
     {
-        //
+        return view('back.social_media.create', ['social'=>$social]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSocialMediaRequest $request, SocialMedia $socialMedia)
+    public function update(UpdateSocialMediaRequest $request, SocialMedia $social)
     {
-        //
+        $request->validated();
+        $social->update($request->all());
+        return redirect()->route('social.index')->with('success', "Réseau modifié avec succés");
     }
 
     /**
@@ -64,6 +66,7 @@ class SocialMediaController extends Controller
      */
     public function destroy(SocialMedia $socialMedia)
     {
-        //
+        $socialMedia->delete();
+        return redirect()->route('social.index')->with('success', "Réseau supprimé avec succés");
     }
 }
