@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('web_site_name');
-            $table->string('web_site_logo')->nullable();
-            $table->string('web_site_address')->nullable();
-            $table->string('web_site_email')->nullable();
-            $table->string('web_site_phone')->nullable();
-            $table->text('about_web_site');
+            $table->string('logo')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->text('about');
             $table->timestamps();
         });
     }
