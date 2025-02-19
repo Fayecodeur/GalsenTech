@@ -9,11 +9,11 @@ class Settings extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "web_site_name",
-        "web_site_email",
-        "web_site_phone",
-        "web_site_address",
-        "web_site_logo",
-        "about_web_site",
+        'web_site_name',
+        'logo',
+        'address',
+        'phone',
+        'email',
+        'about'
     ];
 }
