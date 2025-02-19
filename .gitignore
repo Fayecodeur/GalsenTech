@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+public/back_auth/assets/profile/
 /storage/*.key
 /vendor
 .env
