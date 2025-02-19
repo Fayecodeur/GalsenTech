@@ -22,12 +22,12 @@ class SettingsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "web_site_name" => ['required', 'string'],
-            "web_site_email",  ['required', 'email'],
-            "web_site_phone",  ['required', 'string'],
-            "web_site_address",['required', 'string'],
-            "web_site_logo",  ['image', 'nullable', 'mimes:jpeg,jpg,png', 'max:2048'],
-            "about_web_site",  ['string', 'required'],
+            'web_site_name' => ['required', 'string'],
+            'logo' => ['image', 'nullable', 'mimes:png,jpeg,jpg', 'max:2048'],
+            'address' => ['string', 'nullable'],
+            'phone' => ['string', 'nullable'],
+            'email' => ['string', 'nullable'],
+            'about' => ['string', 'required']
         ];
     }
 }
