@@ -17,7 +17,7 @@ class Admin
     {
         $user = auth()->user();
 
-        if ($user && $user->role === 'admin') {
+        if ($user && str_contains($user->role, 'admin')) {
             return $next($request);
         }
         abort(Response::HTTP_FORBIDDEN);
