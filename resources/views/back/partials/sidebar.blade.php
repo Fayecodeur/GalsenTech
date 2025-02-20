@@ -19,21 +19,28 @@
                         <li><a href="{{ route('article.create') }}"> Ajouter un article </a></li>
                     </ul>
                 </li>
-                <li class="submenu">
-                    <a href="#"
-                    ><i class="fas fa-book"></i> <span> Catégories </span>
-                        <span class="menu-arrow"></span
-                        ></a>
-                    <ul class="submenu_class" style="display: none">
-                        <li>
-                            <a href="{{ route('category.index') }}"> Tous les catégories </a>
-                        </li>
-
-                        <li>
-                            <a href="{{ route('category.create') }}"> Ajouter une catégorie </a>
-                        </li>
-                    </ul>
+                <li>
+                    <a href="all-comments.html"
+                    ><i class="fe fe-table"></i> <span>Commentaires</span></a
+                    >
                 </li>
+                @can('isAdmin')
+                    <li class="submenu">
+                        <a href="#"
+                        ><i class="fas fa-book"></i> <span> Catégories </span>
+                            <span class="menu-arrow"></span
+                            ></a>
+                        <ul class="submenu_class" style="display: none">
+                            <li>
+                                <a href="{{ route('category.index') }}"> Tous les catégories </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('category.create') }}"> Ajouter une catégorie </a>
+                            </li>
+                        </ul>
+                    </li>
+
 
                 <li class="submenu">
                     <a href="#"
@@ -47,11 +54,7 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="all-comments.html"
-                    ><i class="fe fe-table"></i> <span>Commentaires</span></a
-                    >
-                </li>
+
 
                 <li class="submenu">
                     <a href="#"
@@ -75,7 +78,7 @@
                     ><i class="fas fa-cog"></i> <span>Paramètres</span></a
                     >
                 </li>
-
+                @endcan
                 <li class="submenu">
                     <a href="#"
                     ><i class="fas fa-columns"></i> <span> Pages </span>
