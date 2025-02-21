@@ -1,6 +1,6 @@
 <div class="header">
     <div class="header-left">
-        <a href="index.html" class="logo">
+        <a href="{{route("profile.update")}}" class="logo">
             <img
                 src="{{ asset('back_auth/assets/profile/'.\Illuminate\Support\Facades\Auth::user()->image) }}"
                 width="50"
@@ -9,7 +9,7 @@
             />
             <span class="logoclass">{{ \Illuminate\Support\Facades\Auth::user()->name }}</span>
         </a>
-        <a href="index.html" class="logo logo-small">
+        <a href="{{route("profile.update")}}" class="logo logo-small">
             <img
                 src="{{ asset('back_auth/assets/profile/'.\Illuminate\Support\Facades\Auth::user()->image) }}"
                 alt="Logo"
@@ -31,7 +31,7 @@
                       class="rounded-circle"
                       src="{{ asset('back_auth/assets/profile/'.\Illuminate\Support\Facades\Auth::user()->image) }}"
                       width="31"
-                      alt="John Doe"
+                      alt="Profile"
                   /></span>
             </a>
             <div class="dropdown-menu">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
-                <a class="dropdown-item" href="settings.html">Paramettre</a>
+                <a class="dropdown-item" href="{{route("settings.index")}}">Paramettre</a>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button class="btn dropdown-item">Deconnexion</button>
