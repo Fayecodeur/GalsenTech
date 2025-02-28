@@ -30,9 +30,9 @@
                     >Categorie</a
                     >
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a href="category.html" class="dropdown-item">National</a>
-                        <a href="category.html" class="dropdown-item">International</a>
-                        <a href="category.html" class="dropdown-item">Sport</a>
+                        @foreach($categories as $category)
+                            <a href="category.html" class="dropdown-item">{{$category->name}}</a>
+                        @endforeach
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
